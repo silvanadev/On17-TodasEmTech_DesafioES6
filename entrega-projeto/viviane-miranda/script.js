@@ -58,8 +58,8 @@ function createCard(user) {
 const createReposList = async(user) => {
 
     const urlRepos = `https://api.github.com/users/${user}/repos`;
-    //fetch
-    //then
+    //fetch//
+    //then//
     //tratamento de erros
     //map
     //para cada item dessa arrayzona de repos que a API me retorna, eu preciso criar um card que tenha x caracteristicas

@@ -1,6 +1,8 @@
 *{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
+    margin: 0;
+    
 }
 
 .nav-bar{
@@ -21,10 +23,6 @@
    
 }
 
-footer{
-    text-align: center;
-    margin-top: 50px;
-}
 
 .card-principal{
     display: flex;
@@ -35,6 +33,7 @@ footer{
     padding: 30px;
     margin: 20px;
     border-radius: 10px;
+    padding-top: 10px;
 }
 
 .section-do-card{
@@ -57,4 +56,38 @@ footer{
 
 .icone2{
     max-height: 20px;
+}
+
+.erro-p {
+    font-size: 2rem;
+    justify-content: center;
+    color:chocolate;
+}
+
+.div-repos {
+    Width: 442px;
+    Height: 148px;
+    color:aliceblue;
+
+}
+
+.semRepos {
+    font-size: 2rem;
+    justify-content: center;
+    color:chocolate;
+}
+
+footer {
+    width: 99.2%;
+    background-color: #292a2a;
+    padding: 0.3rem;
+    position: absolute;
+	bottom: 0;    
+}
+
+.footer-p {
+    text-align: center;
+    opacity: 0.5;
+    font-size: .7rem;
+    color: #bccccc;
 }
