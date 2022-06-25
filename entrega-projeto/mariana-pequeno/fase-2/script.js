@@ -12,15 +12,20 @@ const bioUser = document.querySelector(".bio");
 const publicReposUser = document.querySelector(".public-repos");
 const followersUser = document.querySelector(".followers");
 
+const cardRepo = document.querySelector(".card-repos");
 const card2 = document.querySelector(".card-2");
 const title2 = document.querySelector(".title-2");
 const pSearch = document.querySelector(".paragraph-search");
+
+const notFoundRepos = document.querySelector(".not-found-repos");
+const pNotRepos = document.querySelector(".p-not-repos");
 
 button.addEventListener("click", (e) => {
   e.preventDefault();
   const userName = input.value.trim();
   if (userName) {
     getGitHubData(userName);
+    createReposList(userName)
   } else {
     alert("Digite algum usuário!");
   }
@@ -36,7 +41,7 @@ const getGitHubData = async (user) => {
       card1.classList.replace("inativo", "ativo");
       card2.classList.replace("ativo", "inativo");
       creatElements(data);
-    } else { //user not found test: 0545mml
+    } else { //user not found test: @0545mml
       // alert("esta usuária não existe no github!");
       card1.classList.replace("ativo", "inativo");
       card2.classList.replace("inativo","ativo");
@@ -57,14 +62,52 @@ function creatElements(user){
   followersUser.innerText = `${followers}`;
 }
 
-//PARTE 2 - COLINHA DA AMADA PROF
-
+//FASE 2
 const createReposList = async (user) => {
   const urlRepos = `https://api.github.com/users/${user}/repos`;
-  //fetch
-  //then
-  //tratamento de erros
-  //map
-  //para cada item dessa arrayzona de repos que a API me retorna, eu preciso criar um card que tenha x caracteristicas
-  // e posso usar tambem o destructure const{ name, stargazes_count, etc} = data
+  try{
+    const responseRepo = await fetch(urlRepos);
+    if(responseRepo.ok){
+      const dataRepos = await responseRepo.json();
+      cardRepo.classList.replace("inativo", "ativo");
+      card2.classList.replace("ativo", "inativo");
+      notFoundRepos.classList.replace("ativo", "inativo");
+      cardRepos(dataRepos);
+    }else{ //User not repos: @Raptor117spect
+      cardRepo.classList.replace("ativo", "inativo");
+      card2.classList.replace("inativo","ativo");
+      notFoundRepos.classList.replace("inativo","ativo");
+      throw new Error(); 
+    }
+  } catch(e){
+    console.error(e)
+  }
 };
+
+function cardRepos(user){
+  user.map(item => {
+    const repos = document.createElement("div");
+    cardRepo.appendChild(repos);
+    repos.classList.add("repos");
+    const titleRepos = document.createElement("h2");
+    repos.appendChild(titleRepos);
+    titleRepos.classList.add("name-repos");
+    const descriptionRepos = document.createElement("p");
+    repos.appendChild(descriptionRepos);
+    descriptionRepos.classList.add("description-repos");
+    const spansTags = document.createElement("div");
+    repos.appendChild(spansTags);
+    spansTags.classList.add("spans-tags");
+    const language = document.createElement("span");
+    spansTags.appendChild(language);
+    language.classList.add("language");
+    const stars = document.createElement("span");
+    spansTags.appendChild(stars);
+    stars.classList.add("stars");
+
+    titleRepos.innerText = item.name;
+    descriptionRepos.innerText = item.description;
+    language.innerText = item.language;
+    stars.innerText = item.stargazers_count;
+  })
+}

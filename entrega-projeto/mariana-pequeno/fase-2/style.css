@@ -14,6 +14,7 @@ body{
   background-color: #ffffff;
   box-sizing: border-box;
   padding: 10px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,18 +49,16 @@ body{
 
 /*MAIN*/
 .container-card{
-  height: 80vh;
-  display: grid;
-  place-content: center;
+  min-height: 80vh;
 }
 
-.card-1{
-  width: 300px;
+.infos-profile{
   padding: 10px;
+  margin-left: 20px;
 }
 
 .container-img-github{
-  max-width: 180px;
+  max-width: 200px;
 }
 
 .img-github{
@@ -106,14 +105,49 @@ body{
   opacity: 0.8;
 }
 
+/*FASE 2 - CARD 1*/
+.card-repos{
+  max-width: 1200px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.repos{
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  min-width: 280px;
+  padding: 10px;
+  flex: 2 1 0;
+}
+
+.name-repos{
+  font-size: 1.125rem;
+}
+
+.description-repos, .language, .stars{
+  font-size: 0.875rem;
+  opacity: 0.5;
+  padding: 10px 0;
+}
+
+.spans-tags{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 /*CARD-2*/
 .inativo{
   display: none;
 }
 
 .ativo{
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
 }
 
 .title-2{
@@ -135,6 +169,7 @@ body{
 footer{
   background-color: #ffffff;
   text-align: center;
+  margin-top: 30px;
 }
 
 footer p{
