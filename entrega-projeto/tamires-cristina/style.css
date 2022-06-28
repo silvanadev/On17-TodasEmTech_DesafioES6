@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Abel";
+  font-family: "Abel", sans-serif;
   font-size: large;
 }
 
@@ -35,7 +35,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: inherit;
-  gap: 5px;
   border: 1px solid #bebebe;
   border-radius: 8px;
   height: 42px;
@@ -52,6 +51,11 @@ body {
   width: 403px;
 }
 
+.button-submit{
+  border:none;
+  background-color: transparent;
+}
+
 .input-img {
   width: 13.68px;
   height: 13.68x;
@@ -60,19 +64,20 @@ body {
 
 footer {
   display: flex;
-  position: absolute;
-  bottom: 0;
+  position: fixed;
   background-color: #ffffff;
   height: 66px;
   width: 100vw;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  bottom: 0px;
+  margin-top: 80px;
 }
 
-.footer_name{
-    color: #ec9b69; 
-    padding-left: 0.5%;
+.footer_name {
+  color: #ec9b69;
+  padding-left: 0.5%;
 }
 
 .card-principal {
@@ -80,30 +85,137 @@ footer {
   justify-content: center;
   flex-direction: column;
   max-width: 250px;
-  background-color: lavenderblush;
   padding: 30px;
   margin: 20px;
   border-radius: 10px;
 }
+.card-principal p{
+  color: #313131;
+}
 
-.section-do-card {
+.login{
+  margin:4px 0 30px;
+  color:#313131;
+}
+.name {
+  font-size: 32px;
+  color: #ec9b69;
+}
+
+.section {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 85vh;
 }
 
 .img-github {
   border-radius: 10px;
 }
 
+.not-found-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-not-found {
+  width: 500px;
+}
+
+.title-not-found {
+  color: #ec9b69;
+  font-size: 48px;
+}
+
+.subtitle-not-found {
+  color: #313131;
+  font-size: 32px;
+}
+.icones-container {
+  margin-top: 8px;
+  display: flex;
+}
+
 .caixa-icone-numeros {
   display: flex;
-  justify-content: space-between;
+  margin: 0 8px;
+  background-color: #ffffff;
+  width: 66px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
 }
 
 .icone1 {
-  max-height: 33px;
+  margin:0px 12px;
 }
 
 .icone2 {
-  max-height: 20px;
+  margin:0px 12px;
+}
+.public-repos{
+  font-size: 12px;
+}
+.followers{
+  font-size: 12px;
+}
+
+.repositorios-container{
+  display: grid;
+  width: 70%;
+  height: 85%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  
+}
+.repository-name{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.repository-description{
+  font-size: 14px;
+  color:#313131
+
+}
+.repository-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 422px;
+  height: 148px;
+  padding: 20px;
+  box-shadow: 0px 4px 15px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.repository-informations{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repository-language{
+  font-size: 10px;
+  color:#313131
+}
+
+.repository-stargazers-count{
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color:#313131
+}
+
+.repository-star{
+  width: 14px;
+  height: 12px;
+  margin: 0 4px;
+}
+
+.repository-not-found{
+  color: #313131;
+  font-size:24px;
+  font-weight: bold;
 }
