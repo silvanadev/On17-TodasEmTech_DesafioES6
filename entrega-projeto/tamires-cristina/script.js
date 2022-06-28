@@ -96,7 +96,7 @@ async function renderRepositoryList(userRepositorys) {
 function userNotFound() {
   return (section.innerHTML = `
   <span class="not-found-container">
-    <h2 class="title-not-found">Usuário não encontrada :(</h2>
+    <h2 class="title-not-found">Usuário não encontrado :(</h2>
     <h3 class="subtitle-not-found">Tente novamente</h3>
     <img class="img-not-found" src="./assets/not-found.svg" alt="minha foto do github" />
   </span>
