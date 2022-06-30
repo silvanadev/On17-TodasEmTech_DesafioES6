@@ -1,10 +1,10 @@
 const input = document.querySelector(".input");
 const btn = document.querySelector(".button-submit");
-const divCard = document.querySelector("card-principal");
+const divCard = document.querySelector(".card-principal");
 
 btn.addEventListener("click", (e) =>{
     e.preventDefault();
-    const UserName = input.ariaValueMax.trim();
+    const UserName = input.value.trim();
     if(UserName){
         getGiHubData(UserName);
     }else {
