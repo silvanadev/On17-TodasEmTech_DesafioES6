@@ -38,8 +38,56 @@ function createCard(user){
     <p class="login">${login}</p>
     <p class="bio">${bio}</p>
     <div class="icones">
-    <img class="icone1"; src="../../images/people_outline.png"/>
+    <button class="btn-icon" id="repos"><img class="icone1"; src="../../images/people_outline.png"/></button>
     <p class="public-repos">${public_repos}</p>
-    <img class="icone2"; src="../../images/Vector.png"/>
-    <p class="followers">${followers}</p>`
+    <button class="btn-icon"><img class="icone2"; src="../../images/Vector.png"/></button>
+    <p class="followers">${followers}</p>`;
+
+    const btnIcon = document.getElementById("repos");
+
+    btnIcon.addEventListener("click", (e) =>{
+        e.preventDefault();
+        getGithubRepos(login);
+        
+    });
 };
+
+const getGithubRepos = async(login) => {
+    const url = `https://api.github.com/users/${login}/repos`;
+  
+    try{
+      const response = await fetch(url);
+      if (response.ok){
+          const data = await response.json();
+          divCard.innerHTML = data.map(repo =>{
+           return creatRepos(repo)
+            
+          }).join("");
+  
+          
+  
+      } else{
+        divCard.style.display = "none";
+          throw new Error()
+      }
+    
+      
+    }
+    catch (error) {
+      alert('Repositório não encontrado.', error)
+    }
+  }
+
+  function creatRepos(login){
+    const {stargazers_count,name,language,description} = login;
+    return (
+    `<div class="repository">
+    <h2>${name}</h2>
+    <h4>${description || ""}</h4>
+    <div  class="box-icon" >
+    <p>${language || ""}</p>
+    <p>⭐${stargazers_count || ""}</p>
+    </div>
+    </div>`)
+  
+  };

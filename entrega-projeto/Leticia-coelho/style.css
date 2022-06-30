@@ -78,6 +78,12 @@ span{
     height: 14px;
 }
 
+.btn-icon{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 
 footer {
   position: fixed;
