@@ -24,7 +24,7 @@ const getGitHubData = async (user) => {
             divCard.innerHTML = createCard(data);
             //chamar aqui a funcao createRepo, utilizando a mesma logica
         } else {
-            alert("esta usuária não existe no github!");
+            alert("s");
             throw new Error();
         }
     }
