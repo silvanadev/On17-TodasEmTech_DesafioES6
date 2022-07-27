@@ -21,9 +21,9 @@ Neste projeto, você  criará uma aplicação de pesquisa que usa a API GitHub p
   <img src="./images/profile.png" />
 </p>
 
-- [ ] Validar campo de texto para não entrar texto vazio
-- [ ] Limpar campo de texto depois que inserir o nome de usuário
-- [ ] O usuário deve receber um alerta se o nome de usuário não for válido 
+- [ ] Validar campo de texto para não entrar texto vazio.
+- [ ] Limpar campo de texto depois que inserir o nome de usuário.
+- [ ] O usuário deve receber um alerta se o nome de usuário não for válido.
   
 
 **Exemplo**: 
